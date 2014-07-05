@@ -1,7 +1,8 @@
 require "sinatra/base"
+require "haml"
 
 class PChui < Sinatra::Base
   get "/" do
-    "Pchui yah"
+    haml :index
   end
 end
