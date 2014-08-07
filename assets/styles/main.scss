@@ -1,3 +1,6 @@
+//=require h5bp
+//=require components/components
+
 /*
  * Web Starter Kit
  *
@@ -324,8 +327,8 @@ main {
   font-family: 'Roboto Condensed';
   font-style: normal;
   font-weight: 300;
-  src: url(/fonts/RobotoCondensed-Light.eot);
-  src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'), url(/fonts/RobotoCondensed-Light.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-Light.woff) format('woff');
+  src: font-url("RobotoCondensed-Light.eot");
+  src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'), url(/fonts/RobotoCondensed-Light.eot) format('embedded-opentype'), font-url("RobotoCondensed-Light.woff") format('woff');
 }
 
 @font-face {
