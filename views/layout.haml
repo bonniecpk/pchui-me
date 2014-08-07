@@ -3,28 +3,29 @@
   %head
     %meta{charset: "utf-8"}/
     %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}/
-    %meta{content: "A front-end template that helps you build fast, modern mobile web apps.", name: "description"}/
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
-    %title Web Starter Kit
+    %title Po Ki Chui (妹妹)
     / Add to homescreen for Chrome on Android
     %meta{content: "yes", name: "mobile-web-app-capable"}/
-    %link{href: "images/touch/chrome-touch-icon-196x196.png", rel: "icon", sizes: "196x196"}/
+    %link{href: asset_path("touch/chrome-touch-icon-196x196.png"), rel: "icon", sizes: "196x196"}/
     / Add to homescreen for Safari on iOS
     %meta{content: "yes", name: "apple-mobile-web-app-capable"}/
     %meta{content: "black", name: "apple-mobile-web-app-status-bar-style"}/
-    %meta{content: "Web Starter Kit", name: "apple-mobile-web-app-title"}/
+    %meta{content: "Po Ki Chui", name: "apple-mobile-web-app-title"}/
     / Tile icon for Win8 (144x144 + tile color)
-    %meta{content: "images/touch/ms-touch-icon-144x144-precomposed.png", name: "msapplication-TileImage"}/
+    %meta{content: asset_path("touch/ms-touch-icon-144x144-precomposed.png"), name: "msapplication-TileImage"}/
     %meta{content: "#3372DF", name: "msapplication-TileColor"}/
     / SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones
     /
       <link rel="canonical" href="http://www.example.com/">
     = stylesheet_tag "main"
+    = javascript_tag "main"
+
   %body
     %header.app-bar.promote-layer
       .app-bar-container
         %button.menu
-          %img{alt: "Menu", src: "images/hamburger.svg"}/
+          %img{alt: "Menu", src: asset_path("hamburger.svg")}/
         %h1.logo Web Starter Kit
         %section.app-bar-actions
           / Put App Bar Buttons Here
@@ -49,8 +50,6 @@
           %a{href: "styleguide/index.html"} Style Guide
     
     = yield
-
-    = javascript_tag "main"
 
     / Google Analytics: change UA-XXXXX-X to be your site's ID
     :javascript
