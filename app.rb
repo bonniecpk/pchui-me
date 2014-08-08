@@ -35,7 +35,11 @@ class PChui < Sinatra::Base
     include Sprockets::Helpers
   end
 
-  get "/" do
-    haml :index
+  get "/samples/full_height" do
+    haml "/samples/full_height".to_sym
+  end
+
+  get "/samples/web_kit" do
+    haml "/samples/web_kit/index".to_sym
   end
 end
