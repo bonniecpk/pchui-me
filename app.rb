@@ -36,10 +36,14 @@ class PChui < Sinatra::Base
   end
 
   get "/samples/full_height" do
-    haml "/samples/full_height".to_sym
+    haml "/samples/full_height/index".to_sym
   end
 
   get "/samples/web_kit" do
     haml "/samples/web_kit/index".to_sym
+  end
+
+  get "/samples/web_kit/styleguide" do
+    haml "/samples/web_kit/styleguide".to_sym
   end
 end
