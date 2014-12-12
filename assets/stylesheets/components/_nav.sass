@@ -8,22 +8,53 @@ nav
   .logo
     // width and height are needed to display the logo
     width: 200px
-    height: 80px
     background: asset-url("logo.jpg") no-repeat
     a
       // make the link clickable
       display: block 
       height: 80px
 
+  /**
+   * Apply for all menu types
+   */
   ul
     list-style: none
 
-  li
-    margin-left: 0px
+  /**
+   * Horizontal Main Menu
+   */
+  ul.main-menu > li
     display: inline-block
+
+  li
     vertical-align: middle
     margin: 0 20px
 
+  /**
+   * Dropdown Menu
+   */
+  li.dropdown-link
+    position: relative
+
+  ul.dropdown-menu
+    background: $nav-bg-color
+    position: absolute
+    top: 100%
+    padding-top: 10px
+
+    li
+      font-size: 0.85em
+      white-space: nowrap
+      margin: 0
+      padding: 10px 20px
+      border-bottom: 1px dotted #DDD
+    
+  /**
+   * Menu links
+   */
   a
     color: #FFF
     text-decoration: none
+
+    &:hover
+      color: #DDD
