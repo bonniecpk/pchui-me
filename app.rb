@@ -2,13 +2,13 @@ require "sinatra/base"
 require "haml"
 require "sass"
 require "compass"
-require 'sprockets'
-require 'sprockets-helpers'
-require 'sprockets-sass'
+require "sprockets"
+require "sprockets-helpers"
+require "sprockets-sass"
+require "font-awesome-sass"
 
 class PChui < Sinatra::Base
   set :sprockets,     Sprockets::Environment.new(root)
-  #set :precompile,    [ /\w+\.(js|css).+$/ ]
   set :assets_prefix, "/assets"
   #set :digest_assets, false
   set :assets_path,   assets_prefix
@@ -25,20 +25,24 @@ class PChui < Sinatra::Base
       config.environment = sprockets
       #config.prefix      = assets_prefix
       #config.digest      = digest_assets
-      #config.public_path = public_folder
+
+      # Uncomment to fall back to public folder if assets not found
+      # in asset path
+      # config.public_path = public_folder
 
       # Force to debug mode in development mode
       # Debug mode automatically sets
       # expand = true, digest = false, manifest = false
       config.debug       = true if development?
-    end
 
-    Compass.configuration do |config|
-      config.project_path = File.dirname(__FILE__)
-      config.sass_dir     = '/assets/stylesheets'
+      # This will automatically configure Sprockets::Helpers based on the
+      # `sprockets`, `public_folder`, `assets_prefix`, and `digest_assets`
+      # settings if they exist. Otherwise you can configure as normal:
+      # helpers.asset_host = 'some-bucket.s3.amazon.com'
 
-      set :haml, { format: :html5 }
-      set :sass, Compass.sass_engine_options
+      # Sprockets::Helpers will use the latest fingerprinted filename
+      # directly from a manifest.json file
+      # config.manifest = Sprockets::Manifest.new(sprockets, 'path/to/manifset.json')
     end
   end
  
