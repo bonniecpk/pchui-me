@@ -36,19 +36,26 @@ nav
   li.dropdown-link
     position: relative
 
-  ul.dropdown-menu
-    background: $nav-bg-color
-    position: absolute
-    top: 100%
-    padding-top: 10px
+    &:hover .dropdown-menu
+      display: block
 
-    li
-      font-size: 0.85em
-      white-space: nowrap
-      margin: 0
-      padding: 10px 20px
-      border-bottom: 1px dotted #DDD
-    
+    ul.dropdown-menu
+      background: $nav-bg-color
+      position: absolute
+      top: 100%
+      padding-top: 10px
+      display: none
+
+      li
+        font-size: 0.85em
+        white-space: nowrap
+        margin: 0
+        padding: 10px 20px
+        border-bottom: 1px dotted #DDD
+
+      li:last-child
+        border-bottom: none
+
   /**
    * Menu links
    */
