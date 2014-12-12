@@ -5,7 +5,6 @@ require "compass"
 require "sprockets"
 require "sprockets-helpers"
 require "sprockets-sass"
-require "font-awesome-sass"
 
 class PChui < Sinatra::Base
   set :sprockets,     Sprockets::Environment.new(root)
