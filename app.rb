@@ -53,8 +53,30 @@ class PChui < Sinatra::Base
     haml :index
   end
 
-  get "/samples/full_height" do
-    haml "/samples/full_height/index".to_sym
+  ##-------------------##
+  # Javascript Examples #
+  ##-------------------##
+  get '/js-examples/drag-rect' do
+    erb :'drag-rect'
+  end
+
+  get '/js-examples/mouseout' do
+    erb :mouseout
+  end
+
+  get '/js-examples/scroll' do
+    erb :scroll
+  end
+
+  ##------------##
+  # CSS Examples #
+  ##------------##
+  get '/css-examples/spinner' do
+    haml :spinner, layout: false
+  end
+
+  get "/css-examples/full-height" do
+    haml :full_height, layout: false
   end
 
   get "/samples/web_kit" do
