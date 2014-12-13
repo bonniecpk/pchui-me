@@ -72,11 +72,11 @@ class PChui < Sinatra::Base
   # CSS Examples #
   ##------------##
   get '/css-examples/spinner' do
-    haml :spinner
+    haml :spinner, layout: false
   end
 
   get "/css-examples/full-height" do
-    haml :full_height
+    haml :full_height, layout: false
   end
 
   get "/samples/web_kit" do

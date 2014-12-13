@@ -15,7 +15,7 @@
           %a{href: "#"} My Education
         %li
           %a{href: "#"} My Activities
-    %li.dropdown-link
+    %li.dropdown-link{class: "tooltip", title: "Disclaimer: These techniques are learned from other people or web sites."}
       %a{href: "#"}
         %span CSS
         %i.fa.fa-caret-down
@@ -23,21 +23,29 @@
         %li
           %a{href: "/css-examples/full-height", target: "_blank"} Full Height CSS
         %li
-          %a{href: "/css-examples/spinner"} Spinners
-    %li.dropdown-link
+          %a{href: "/css-examples/spinner", target: "_blank"} Spinners
+    %li.dropdown-link{class: "tooltip", title: "Disclaimer: These techniques are learned from other people or web sites."}
       %a{href: "#"}
         %span Javascript
         %i.fa.fa-caret-down
       %ul.dropdown-menu
         %li
-          %a{href: "/js-examples/drag-rect"} Drag Rectangle
+          %a{href: "/js-examples/drag-rect", target: "_blank"} Drag Rectangle
         %li
-          %a{href: "/js-examples/mouseout"} Mouseout
+          %a{href: "/js-examples/mouseout", target: "_blank"} Mouseout
         %li
-          %a{href: "/js-examples/scroll"} Scroll
+          %a{href: "/js-examples/scroll", target: "_blank"} Scroll
     %li
       %a{href: "#"} 中文
     %li
       %a{href: "http://exchange.pchui.me/currency-graph"} Investment
     %li
       %a{href: "#"} GitHub
+
+:javascript
+  $(document).ready(function() {
+    $('.tooltip').tooltipster({
+      delay:     10,
+      position:  "left"
+    });
+  });
